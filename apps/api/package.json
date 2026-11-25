@@ -1,0 +1,44 @@
+{
+  "name": "@sct/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sách Chuyền Tay — REST API (Express 5 + Drizzle ORM + SQLite/Cloudflare D1)",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/main.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/cli.ts migrate",
+    "db:seed": "tsx src/db/cli.ts seed",
+    "db:reset": "tsx src/db/cli.ts reset",
+    "db:d1-sql": "tsx src/db/cli.ts d1-sql"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "@sct/shared": "*",
+    "cors": "^2.8.5",
+    "drizzle-orm": "^0.45.4",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "pino": "^9.9.0",
+    "pino-http": "^10.5.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.0",
+    "@types/supertest": "^6.0.3",
+    "drizzle-kit": "^0.31.0",
+    "esbuild": "^0.28.2",
+    "pino-pretty": "^13.1.0",
+    "supertest": "^7.1.0",
+    "tsx": "^4.20.0",
+    "vitest": "^4.1.12"
+  }
+}

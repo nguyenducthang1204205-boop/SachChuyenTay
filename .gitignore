@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Local data (PGlite database)
+.data/
+
+# Cloudflare (wrangler)
+.wrangler/
+.dev.vars*
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Bản tĩnh cũ (tham chiếu, xoá khi không cần nữa)
+_legacy-static/

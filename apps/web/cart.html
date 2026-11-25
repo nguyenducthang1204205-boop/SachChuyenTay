@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giỏ sách & thanh toán — Sách Chuyền Tay</title>
+  <meta name="description" content="Xem lại giỏ sách và hoàn tất đơn hàng tại Sách Chuyền Tay.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#2f5d50">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body data-page="cart">
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Trang chủ</a><i data-icon="chevronRight"></i><span aria-current="page">Giỏ sách</span>
+        </nav>
+        <h1>Giỏ sách của bạn</h1>
+        <p id="cart-sub">Kiểm tra lại những cuốn sách bạn đã chọn và hoàn tất đơn hàng.</p>
+      </div>
+    </section>
+
+    <div class="container" id="cart-root"></div>
+  </main>
+
+  <!-- Order success modal -->
+  <div class="modal" id="success-modal" aria-hidden="true">
+    <div class="backdrop"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="success-title">
+      <div class="modal__icon"><i data-icon="check"></i></div>
+      <h2 id="success-title">Đặt hàng thành công!</h2>
+      <p id="success-text">Cảm ơn bạn đã chọn Sách Chuyền Tay. Chúng tôi sẽ gọi xác nhận trong ít phút.</p>
+      <span class="order-code" id="order-code"></span>
+      <div class="modal__actions">
+        <a class="btn" href="shop.html">Tiếp tục khám phá</a>
+        <a class="btn btn--ghost" href="index.html">Về trang chủ</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/cart.ts"></script>
+</body>
+</html>

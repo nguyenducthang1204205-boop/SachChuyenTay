@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sách Chuyền Tay — Nhà sách cũ trực tuyến, đọc xanh sống chậm</title>
+  <meta name="description" content="Sách Chuyền Tay — mua bán sách cũ được tuyển chọn, làm sạch và kiểm định kỹ lưỡng. Giá chỉ từ 30% giá bìa, đổi trả 7 ngày, giao hàng toàn quốc.">
+  <meta name="theme-color" content="#2f5d50">
+  <meta property="og:title" content="Sách Chuyền Tay — Nhà sách cũ có tâm">
+  <meta property="og:description" content="Mỗi cuốn sách xứng đáng có thêm một người đọc.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow"><i data-icon="leaf"></i> Nhà sách cũ · Đọc xanh, sống chậm</span>
+          <h1 class="hero__title">Mỗi cuốn sách xứng đáng có thêm <em>một người đọc</em>.</h1>
+          <p class="hero__lead">Sách Chuyền Tay tuyển chọn, làm sạch và kiểm định từng cuốn sách cũ để chúng tiếp tục hành trình — đến tay bạn với giá chỉ từ 30% giá bìa.</p>
+
+          <form class="hero-search" action="shop.html" role="search">
+            <i data-icon="search"></i>
+            <label class="visually-hidden" for="hero-q">Tìm sách</label>
+            <input id="hero-q" name="q" type="search" placeholder="Bạn đang tìm cuốn sách nào?" autocomplete="off">
+            <button class="btn" type="submit">Tìm sách</button>
+          </form>
+          <div class="hero__tags">
+            <span>Tìm nhiều:</span>
+            <a href="shop.html?q=Nguyễn Nhật Ánh">Nguyễn Nhật Ánh</a>
+            <a href="shop.html?q=Murakami">Murakami</a>
+            <a href="shop.html?cat=kynang">Kỹ năng sống</a>
+            <a href="shop.html?cat=thieunhi">Thiếu nhi</a>
+          </div>
+
+          <div class="hero__stats">
+            <div><strong>12.000+</strong><span>đầu sách trên kệ</span></div>
+            <div><strong>8.500+</strong><span>độc giả tin chọn</span></div>
+            <div><strong>4,9★</strong><span>đánh giá trung bình</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="float-card float-card--a">
+            <span class="float-card__icon"><i data-icon="shield"></i></span>
+            <div><strong>Kiểm định 20 điểm</strong><span>Từng trang, từng gáy sách</span></div>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-card__icon"><i data-icon="tag"></i></span>
+            <div><strong>Tiết kiệm đến 70%</strong><span>So với giá bìa</span></div>
+          </div>
+          <div class="hero-stack" id="hero-stack"></div>
+          <div class="hero-shelf"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust" aria-label="Cam kết của chúng tôi">
+      <div class="container">
+        <div class="trust__item"><span class="trust__icon"><i data-icon="shield"></i></span><div><strong>Kiểm định kỹ lưỡng</strong><span>20 tiêu chí cho mỗi cuốn sách</span></div></div>
+        <div class="trust__item"><span class="trust__icon"><i data-icon="refresh"></i></span><div><strong>Đổi trả 7 ngày</strong><span>Sai mô tả? Hoàn tiền 100%</span></div></div>
+        <div class="trust__item"><span class="trust__icon"><i data-icon="truck"></i></span><div><strong>Giao toàn quốc</strong><span>Miễn phí đơn từ 300.000₫</span></div></div>
+        <div class="trust__item"><span class="trust__icon"><i data-icon="leaf"></i></span><div><strong>Đóng gói xanh</strong><span>Giấy kraft, không túi ni-lông</span></div></div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Khám phá theo thể loại</span>
+            <h2 class="section-title">Mỗi kệ sách, <em>một thế giới</em></h2>
+          </div>
+          <a class="link-arrow" href="shop.html">Xem tất cả sách <i data-icon="arrow"></i></a>
+        </div>
+        <div class="cat-grid reveal" id="cat-grid"></div>
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Vừa lên kệ</span>
+            <h2 class="section-title">Sách mới về <em>tuần này</em></h2>
+            <p class="section-sub">Sách cũ thường chỉ có một bản — cuốn bạn thích hôm nay có thể đã được chuyền tay vào ngày mai.</p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Lọc sách mới về" id="new-tabs">
+            <button class="tab is-active" role="tab" aria-selected="true" data-filter="all">Tất cả</button>
+            <button class="tab" role="tab" aria-selected="false" data-filter="van-hoc">Văn học</button>
+            <button class="tab" role="tab" aria-selected="false" data-filter="kynang">Kỹ năng</button>
+            <button class="tab" role="tab" aria-selected="false" data-filter="thieunhi">Thiếu nhi</button>
+          </div>
+        </div>
+        <div class="book-grid" id="new-grid" aria-live="polite"></div>
+        <div style="text-align:center;margin-top:44px">
+          <a class="btn btn--ghost btn--lg" href="shop.html?sort=newest">Xem tất cả sách mới <i data-icon="arrow"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMOS -->
+    <section class="section">
+      <div class="container promo-grid">
+        <article class="promo promo--green reveal">
+          <span class="eyebrow"><i data-icon="wallet"></i> Bán sách cũ</span>
+          <h3>Tủ sách đầy? Đổi sách cũ thành tiền trong 48 giờ.</h3>
+          <p>Gửi danh sách, nhận báo giá minh bạch và để chúng tôi đến tận nơi nhận sách — hoàn toàn miễn phí.</p>
+          <a class="btn btn--light" href="sell.html">Định giá sách của bạn <i data-icon="arrow"></i></a>
+          <div class="promo__art" id="promo-art-1" aria-hidden="true"></div>
+        </article>
+        <article class="promo promo--ink reveal">
+          <span class="eyebrow"><i data-icon="sparkles"></i> Góc sách hiếm</span>
+          <h3>Những bản in xưa, bản đầu tiên và sách đã tuyệt bản.</h3>
+          <p>Dành cho người sưu tầm: mỗi cuốn đều có câu chuyện riêng và chỉ duy nhất một bản.</p>
+          <a class="btn btn--accent" href="shop.html?q=hiếm">Khám phá góc sách hiếm <i data-icon="arrow"></i></a>
+          <div class="promo__art" id="promo-art-2" aria-hidden="true"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BESTSELLERS -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Được yêu thích nhất</span>
+            <h2 class="section-title">Những cuốn sách <em>ai cũng nhắc</em></h2>
+          </div>
+          <a class="link-arrow" href="shop.html?sort=rating">Xem bảng xếp hạng <i data-icon="arrow"></i></a>
+        </div>
+        <div class="book-grid" id="best-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONDITION GUIDE -->
+    <section class="section" id="tinh-trang">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Minh bạch tình trạng</span>
+          <h2 class="section-title">Bạn biết chính xác <em>mình nhận được gì</em></h2>
+          <p class="section-sub">Mỗi cuốn sách được phân loại theo 3 mức tình trạng rõ ràng, kèm ghi chú chi tiết từ người kiểm định.</p>
+        </div>
+        <div class="cond-grid" id="cond-grid"></div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section impact" id="ve-chung-toi">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Về Sách Chuyền Tay</span>
+          <h2 class="section-title">Một cuốn sách, <em>nhiều cuộc đời</em>.</h2>
+          <p>Chúng tôi bắt đầu từ một kệ sách nhỏ và một niềm tin: tri thức nên được lưu chuyển, không nên phủ bụi. Mỗi cuốn sách được chuyền tay là một cây xanh được giữ lại và một người đọc mới được chạm tới.</p>
+        </div>
+        <div class="impact__stats reveal">
+          <div class="impact__stat"><i data-icon="recycle"></i><strong data-count="36500">0</strong><span>cuốn sách đã được chuyền tay</span></div>
+          <div class="impact__stat"><i data-icon="leaf"></i><strong data-count="610">0</strong><span>cây xanh tiết kiệm (ước tính)</span></div>
+          <div class="impact__stat"><i data-icon="users"></i><strong data-count="8500">0</strong><span>độc giả trên khắp 63 tỉnh thành</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Bán sách cho chúng tôi</span>
+            <h2 class="section-title">Chuyền tay sách cũ <em>chỉ 4 bước</em></h2>
+          </div>
+          <a class="btn" href="sell.html">Bắt đầu ngay <i data-icon="arrow"></i></a>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><span class="step__icon"><i data-icon="camera"></i></span><h3>Gửi thông tin</h3><p>Chụp ảnh hoặc liệt kê tên sách qua form, Zalo hoặc Facebook.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="tag"></i></span><h3>Nhận báo giá</h3><p>Chúng tôi phản hồi giá thu mua minh bạch trong vòng 24 giờ.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="truck"></i></span><h3>Lấy sách tận nơi</h3><p>Miễn phí nhận sách tại nhà ở TP.HCM, Hà Nội — hoặc gửi bưu điện.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="wallet"></i></span><h3>Nhận tiền ngay</h3><p>Chuyển khoản trong 48 giờ hoặc đổi thành điểm mua sách +20%.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Độc giả nói gì</span>
+          <h2 class="section-title">Những người đã <em>nhận sách</em></h2>
+        </div>
+        <div class="testi-grid">
+          <figure class="testi reveal">
+            <blockquote>Sách đến tay còn thơm mùi giấy, được bọc kraft cẩn thận kèm một tấm bookmark viết tay. Đúng là “sách cũ có tâm”.</blockquote>
+            <footer><span class="avatar" style="--av:#c8693a">TL</span><div><strong>Thu Linh</strong><span>Sinh viên, Hà Nội</span></div></footer>
+          </figure>
+          <figure class="testi reveal">
+            <blockquote>Tôi bán lại gần 200 cuốn sách của bố. Báo giá nhanh, rõ ràng, và tôi vui vì biết chúng sẽ đến với những người thật sự đọc.</blockquote>
+            <footer><span class="avatar" style="--av:#2f5d50">MK</span><div><strong>Minh Khoa</strong><span>Kỹ sư, TP. Hồ Chí Minh</span></div></footer>
+          </figure>
+          <figure class="testi reveal">
+            <blockquote>Phần mô tả tình trạng rất trung thực. Cuốn “Khá” mình mua có vài ghi chú bút chì đúng như ghi — còn thấy thú vị nữa.</blockquote>
+            <footer><span class="avatar" style="--av:#6a4a86">HA</span><div><strong>Hoàng Anh</strong><span>Giáo viên, Đà Nẵng</span></div></footer>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section newsletter" style="padding-top:88px">
+      <div class="container">
+        <div class="newsletter__box reveal">
+          <div>
+            <h2 class="section-title">Nhận thư “Sách mới lên kệ” mỗi sáng thứ Sáu</h2>
+            <p>Những cuốn hay vừa về, sách hiếm hiếm khi có, và mã giảm 10% cho đơn đầu tiên.</p>
+          </div>
+          <div>
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <label class="visually-hidden" for="nl-email">Email của bạn</label>
+              <input id="nl-email" type="email" placeholder="Email của bạn" required>
+              <button class="btn" type="submit">Đăng ký <i data-icon="send"></i></button>
+            </form>
+            <p class="newsletter__note">Không spam. Huỷ đăng ký bất cứ lúc nào.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/home.ts"></script>
+</body>
+</html>

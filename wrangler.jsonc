@@ -1,0 +1,52 @@
+/**
+ * Cloudflare Workers — một Worker phục vụ cả web (file tĩnh), API (/api/*) và ảnh (/images/*) trên cùng domain.
+ * Dữ liệu: D1 (SQLite) + R2 (ảnh) — toàn bộ nằm trong Cloudflare.
+ * Hướng dẫn triển khai: README.md, mục "Triển khai lên Cloudflare".
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sach-chuyen-tay",
+  "main": "apps/api/src/worker/index.ts",
+  "compatibility_date": "2025-09-15",
+  "compatibility_flags": ["nodejs_compat"],
+  // Dùng bản Node của pino (pino-http cần), thay vì bản "browser" mà bundler mặc định chọn.
+  "alias": { "pino": "./node_modules/pino/pino.js" },
+
+  "assets": {
+    "directory": "apps/web/dist",
+    // Chỉ các đường dẫn này chạy Worker; còn lại là file tĩnh (/shop → shop.html).
+    "run_worker_first": ["/api/*", "/health/*", "/images/*"]
+  },
+
+  // Cấu hình không bí mật. Bí mật (nếu có) đặt bằng: npx wrangler secret put <TÊN>
+  "vars": {
+    "NODE_ENV": "production",
+    "LOG_LEVEL": "info",
+    // Web và API cùng origin nên không cần CORS; liệt kê thêm domain khác nếu gọi API từ nơi khác.
+    "CORS_ORIGINS": ""
+  },
+
+  // CSDL: Cloudflare D1 (SQLite). Tạo một lần: npx wrangler d1 create sach-chuyen-tay --location=apac (cf:setup tự làm).
+  // Migration: npx wrangler d1 migrations apply DB --remote (dùng chung thư mục SQL với libsql khi dev).
+  // Khi `npm run cf:dev`, wrangler giả lập D1 trên máy (.wrangler/state).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sach-chuyen-tay",
+      "database_id": "f723026a-4490-4386-9241-59fcc28bac76",
+      "migrations_dir": "apps/api/src/db/migrations"
+    }
+  ],
+
+  // Ảnh bìa + ảnh khách gửi. Tạo một lần: npx wrangler r2 bucket create sach-chuyen-tay-media (cf:setup tự làm).
+  // Khi `npm run cf:dev`, wrangler giả lập R2 trên máy (.wrangler/state).
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "sach-chuyen-tay-media" }],
+
+  // Giới hạn tần suất (period chỉ được 10 hoặc 60 giây). namespace_id: số nguyên tuỳ chọn, duy nhất trong tài khoản.
+  "ratelimits": [
+    { "name": "WRITE_LIMITER", "namespace_id": "1101", "simple": { "limit": 20, "period": 60 } },
+    { "name": "LOGIN_LIMITER", "namespace_id": "1102", "simple": { "limit": 10, "period": 60 } }
+  ],
+
+  "observability": { "enabled": true }
+}

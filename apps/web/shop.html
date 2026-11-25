@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cửa hàng sách cũ — Sách Chuyền Tay</title>
+  <meta name="description" content="Duyệt hàng nghìn đầu sách cũ đã được kiểm định: văn học, kỹ năng, kinh tế, thiếu nhi, khoa học, công nghệ. Lọc theo thể loại, tình trạng và giá.">
+  <meta name="theme-color" content="#2f5d50">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body data-page="shop">
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Trang chủ</a><i data-icon="chevronRight"></i><span aria-current="page" id="crumb-current">Cửa hàng</span>
+        </nav>
+        <h1 id="shop-title">Tất cả sách</h1>
+        <p id="shop-sub">Mỗi cuốn sách đều đã được kiểm định tình trạng và làm sạch. Phần lớn chỉ có một bản duy nhất.</p>
+      </div>
+    </section>
+
+    <div class="container shop">
+      <!-- Filters -->
+      <aside class="filters" id="filters" aria-label="Bộ lọc">
+        <div class="backdrop" data-close-filters></div>
+        <div class="filters__panel">
+          <div class="filters__head">
+            <h2>Bộ lọc</h2>
+            <button class="icon-btn" type="button" aria-label="Đóng bộ lọc" data-close-filters><i data-icon="x"></i></button>
+          </div>
+
+          <div class="filter-group">
+            <h3>Thể loại</h3>
+            <div id="f-cats"></div>
+          </div>
+          <div class="filter-group">
+            <h3>Tình trạng</h3>
+            <div id="f-conds"></div>
+          </div>
+          <div class="filter-group">
+            <h3>Giá tối đa: <span class="range-value" id="f-price-val"></span></h3>
+            <input class="range" type="range" id="f-price" min="20000" max="250000" step="5000" aria-label="Giá tối đa">
+            <div class="range-labels"><span>20.000₫</span><span>250.000₫</span></div>
+          </div>
+          <div class="filter-group">
+            <label class="toggle"><span>Chỉ hiện sách còn hàng</span><input type="checkbox" id="f-stock"></label>
+          </div>
+          <div class="filter-group" style="border:0">
+            <button class="btn btn--ghost btn--block btn--sm" type="button" id="f-reset">Xoá tất cả bộ lọc</button>
+          </div>
+          <div class="filters__apply">
+            <button class="btn btn--block btn--lg" type="button" data-close-filters id="f-apply">Xem kết quả</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Results -->
+      <section aria-labelledby="shop-title">
+        <div class="shop-toolbar">
+          <p class="shop-toolbar__count" id="result-count" aria-live="polite"></p>
+          <div class="shop-toolbar__right">
+            <button class="btn btn--ghost btn--sm filter-toggle" type="button" id="open-filters"><i data-icon="filter"></i> Bộ lọc</button>
+            <label class="visually-hidden" for="sort">Sắp xếp</label>
+            <select class="select" id="sort">
+              <option value="featured">Nổi bật</option>
+              <option value="newest">Mới về</option>
+              <option value="price-asc">Giá: thấp → cao</option>
+              <option value="price-desc">Giá: cao → thấp</option>
+              <option value="discount">Tiết kiệm nhiều nhất</option>
+              <option value="rating">Đánh giá cao</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="active-filters"></div>
+        <div class="book-grid" id="shop-grid"></div>
+        <div class="load-more" id="load-more"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/shop.ts"></script>
+</body>
+</html>

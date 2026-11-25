@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+.data
+_legacy-static
+apps/api/src/db/migrations
+package-lock.json
+*.html
+*.css

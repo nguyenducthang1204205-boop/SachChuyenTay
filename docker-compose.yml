@@ -1,0 +1,27 @@
+# Chạy bằng Node trong Docker (không cần Cloudflare):  docker compose up --build
+# Web: http://localhost:8080   API: http://localhost:4000
+# CSDL SQLite + ảnh lưu trong volume `data`.
+services:
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    environment:
+      DATABASE_URL: file:/app/apps/api/.data/sct.db
+      UPLOADS_DIR: /app/apps/api/.data/uploads
+      DB_AUTO_MIGRATE: "true"
+      DB_SEED_IF_EMPTY: "true" # tắt khi có dữ liệu thật
+      CORS_ORIGINS: http://localhost:8080
+      TRUST_PROXY: "1"
+      # Tài khoản quản trị đầu tiên (chỉ tạo khi DB chưa có admin) — ĐỔI trước khi dùng thật
+      ADMIN_EMAIL: admin@sachchuyentay.vn
+      ADMIN_PASSWORD: change-me-please
+    volumes:
+      - data:/app/apps/api/.data
+    ports: ["4000:4000"]
+
+  web:
+    build: { context: ., dockerfile: apps/web/Dockerfile }
+    ports: ["8080:80"]
+    depends_on: [api]
+
+volumes:
+  data:

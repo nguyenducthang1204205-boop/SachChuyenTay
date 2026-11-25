@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bán sách cũ — Định giá miễn phí | Sách Chuyền Tay</title>
+  <meta name="description" content="Bán hoặc ký gửi sách cũ cho Sách Chuyền Tay: định giá minh bạch trong 24 giờ, nhận sách tận nơi, thanh toán trong 48 giờ.">
+  <meta name="theme-color" content="#2f5d50">
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body data-page="sell">
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- HERO + ESTIMATOR -->
+    <section class="sell-hero">
+      <div class="container">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Trang chủ</a><i data-icon="chevronRight"></i><span aria-current="page">Bán sách cũ</span>
+          </nav>
+          <span class="eyebrow" style="margin-top:24px"><i data-icon="recycle"></i> Chuyền tay sách cũ</span>
+          <h1>Sách cũ của bạn,<br><em>hành trình mới</em> của người khác.</h1>
+          <p>Đừng để sách phủ bụi trên kệ. Chúng tôi thu mua và nhận ký gửi sách cũ với giá minh bạch — nhanh, gọn và hoàn toàn miễn phí vận chuyển.</p>
+          <ul class="sell-hero__list">
+            <li><i data-icon="check"></i> Báo giá trong vòng 24 giờ</li>
+            <li><i data-icon="check"></i> Nhận sách tận nhà tại TP.HCM &amp; Hà Nội</li>
+            <li><i data-icon="check"></i> Thanh toán trong 48 giờ hoặc nhận điểm mua sách +20%</li>
+          </ul>
+        </div>
+
+        <div class="estimator" id="estimator">
+          <h2>Ước tính giá thu mua</h2>
+          <p>Chọn thông tin gần đúng — kết quả chỉ mang tính tham khảo.</p>
+          <form id="est-form" novalidate>
+            <div class="field">
+              <label for="est-cat">Thể loại sách</label>
+              <select class="select" id="est-cat"></select>
+            </div>
+            <div class="field">
+              <span class="label" id="est-cond-label">Tình trạng</span>
+              <div class="seg" role="radiogroup" aria-labelledby="est-cond-label">
+                <label><input type="radio" name="est-cond" value="like-new" checked><span>Như mới</span></label>
+                <label><input type="radio" name="est-cond" value="good"><span>Tốt</span></label>
+                <label><input type="radio" name="est-cond" value="fair"><span>Khá</span></label>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="est-price">Giá bìa TB (₫)</label>
+                <input class="input" id="est-price" type="number" inputmode="numeric" min="10000" step="1000" value="120000">
+              </div>
+              <div class="field">
+                <label for="est-qty">Số lượng</label>
+                <input class="input" id="est-qty" type="number" inputmode="numeric" min="1" max="1000" value="10">
+              </div>
+            </div>
+            <div class="estimate-result" aria-live="polite">
+              <span>Bạn có thể nhận khoảng</span>
+              <strong id="est-out">—</strong>
+              <small id="est-credit"></small>
+            </div>
+            <a class="btn btn--accent btn--block btn--lg" href="#sell-form-wrap">Gửi yêu cầu định giá <i data-icon="arrow"></i></a>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Quy trình đơn giản</span>
+          <h2 class="section-title">Từ kệ sách của bạn <em>đến tay người đọc mới</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="step__icon"><i data-icon="camera"></i></span><h3>Gửi thông tin</h3><p>Điền form bên dưới, kèm danh sách hoặc ảnh chụp gáy sách.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="tag"></i></span><h3>Nhận báo giá</h3><p>Chuyên viên phản hồi giá cụ thể từng cuốn trong 24 giờ.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="truck"></i></span><h3>Nhận sách miễn phí</h3><p>Chúng tôi đến tận nơi, hoặc bạn gửi bưu điện — phí do chúng tôi chịu.</p></div>
+          <div class="step"><span class="step__icon"><i data-icon="wallet"></i></span><h3>Thanh toán</h3><p>Nhận tiền chuyển khoản, hoặc chọn điểm mua sách để được cộng thêm 20%.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section section--alt" id="sell-form-wrap">
+      <div class="container sell-layout">
+        <div>
+          <span class="eyebrow">Chúng tôi nhận gì?</span>
+          <h2 class="section-title">Sách nào cũng có thể <em>có người đọc tiếp</em></h2>
+          <div class="accepted">
+            <div class="accepted__item yes"><i data-icon="check"></i><div><strong>Nhận thu mua</strong><p>Văn học, kỹ năng, kinh tế, thiếu nhi, khoa học, ngoại văn, sách chuyên ngành còn giá trị, sách xưa và sách hiếm.</p></div></div>
+            <div class="accepted__item yes"><i data-icon="check"></i><div><strong>Nhận ký gửi</strong><p>Sách sưu tầm, bộ sách trọn bộ, sách có chữ ký tác giả — bạn tự định giá, chúng tôi bán hộ với phí 20%.</p></div></div>
+            <div class="accepted__item no"><i data-icon="x"></i><div><strong>Chưa nhận</strong><p>Sách giáo khoa đã viết bài, sách lậu/in lậu, tạp chí theo kỳ, sách bị ẩm mốc hoặc thiếu trang.</p></div></div>
+          </div>
+        </div>
+
+        <form class="panel" id="sell-form" novalidate>
+          <h2 class="panel__title">Gửi yêu cầu định giá</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label for="s-name">Họ và tên <span style="color:var(--accent)">*</span></label>
+              <input class="input" id="s-name" name="name" autocomplete="name" placeholder="Nguyễn Văn A" required>
+              <span class="error">Vui lòng nhập họ tên</span>
+            </div>
+            <div class="field">
+              <label for="s-phone">Số điện thoại / Zalo <span style="color:var(--accent)">*</span></label>
+              <input class="input" id="s-phone" name="phone" type="tel" autocomplete="tel" placeholder="09xx xxx xxx" required>
+              <span class="error">Số điện thoại chưa hợp lệ</span>
+            </div>
+            <div class="field">
+              <label for="s-city">Khu vực</label>
+              <select class="select" id="s-city" name="city"></select>
+            </div>
+            <div class="field">
+              <label for="s-method">Hình thức</label>
+              <select class="select" id="s-method" name="method"></select>
+            </div>
+            <div class="field full">
+              <label for="s-list">Danh sách sách <span style="color:var(--accent)">*</span></label>
+              <textarea class="textarea" id="s-list" name="bookList" rows="5" placeholder="Mỗi dòng một cuốn, ví dụ:&#10;Nhà Giả Kim – Paulo Coelho – còn mới&#10;Sapiens – bìa cứng – có ghi chú bút chì" required></textarea>
+              <span class="hint">Mỗi dòng một cuốn. Có thể đính kèm ảnh ở bên dưới để được báo giá sát hơn.</span>
+              <span class="error">Hãy cho chúng tôi biết bạn có những cuốn nào</span>
+            </div>
+            <div class="field full">
+              <span class="label">Ảnh sách <span class="hint">(tuỳ chọn, tối đa 4 ảnh)</span></span>
+              <div class="photo-picker" id="s-photos"></div>
+              <span class="hint">Chụp gáy sách hoặc bìa, chỗ ố/rách nếu có. Ảnh được nén trên máy bạn trước khi gửi.</span>
+              <span class="error"></span>
+            </div>
+            <label class="check full"><input type="checkbox" id="s-pickup" name="pickup" checked> Tôi muốn được nhận sách tận nơi</label>
+          </div>
+          <button class="btn btn--lg btn--block" type="submit" style="margin-top:24px">Gửi yêu cầu <i data-icon="send"></i></button>
+          <p class="secure-note">Chúng tôi chỉ dùng thông tin này để liên hệ báo giá.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Câu hỏi thường gặp</span>
+          <h2 class="section-title">Bạn hỏi, <em>chúng tôi trả lời</em></h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Sách Chuyền Tay định giá sách cũ như thế nào? <i data-icon="plus"></i></summary>
+            <p>Giá thu mua dựa trên ba yếu tố: tình trạng thực tế, nhu cầu của độc giả với đầu sách đó và giá bìa. Thông thường bạn nhận được 15–40% giá bìa; sách hiếm, bản in đầu hoặc sách ngoại văn có thể cao hơn.</p>
+          </details>
+          <details>
+            <summary>Có số lượng tối thiểu khi bán sách không? <i data-icon="plus"></i></summary>
+            <p>Không. Tuy nhiên để nhận sách tận nhà miễn phí, đơn cần từ 10 cuốn trở lên. Với số lượng ít hơn, bạn có thể mang đến cửa hàng hoặc gửi bưu điện (chúng tôi hoàn phí).</p>
+          </details>
+          <details>
+            <summary>Nếu tôi không đồng ý với báo giá thì sao? <i data-icon="plus"></i></summary>
+            <p>Hoàn toàn không sao. Bạn có thể chọn bán một phần, chuyển sang ký gửi, hoặc nhận lại sách. Nếu sách đã được gửi đến, chúng tôi sẽ hoàn trả miễn phí.</p>
+          </details>
+          <details>
+            <summary>Sách mua ở đây được làm sạch ra sao? <i data-icon="plus"></i></summary>
+            <p>Mỗi cuốn được lau bìa, khử mùi, phơi khô và kiểm tra 20 tiêu chí (gáy, trang, ghi chú, nấm mốc…). Sách được bọc giấy kraft và ghi rõ tình trạng trước khi lên kệ.</p>
+          </details>
+          <details>
+            <summary>Tôi có thể đổi trả sách đã mua không? <i data-icon="plus"></i></summary>
+            <p>Có. Trong vòng 7 ngày nếu sách không đúng mô tả tình trạng, bạn được đổi cuốn khác hoặc hoàn tiền 100%, miễn phí vận chuyển hai chiều.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success modal -->
+  <div class="modal" id="sell-modal" aria-hidden="true">
+    <div class="backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sell-modal-title">
+      <div class="modal__icon"><i data-icon="check"></i></div>
+      <h2 id="sell-modal-title">Đã nhận yêu cầu!</h2>
+      <p id="sell-modal-text">Chúng tôi sẽ liên hệ báo giá trong vòng 24 giờ.</p>
+      <div class="modal__actions">
+        <button class="btn" type="button" data-close-modal>Đóng</button>
+        <a class="btn btn--ghost" href="shop.html">Xem sách đang bán</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="/src/pages/sell.ts"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Triển khai lên Cloudflare Workers — chạy tay (Actions → Deploy → Run workflow).
+# Cần các secret của repo:
+#   CLOUDFLARE_API_TOKEN  — token có quyền Workers Scripts, D1 và R2 (Edit)
+#   CLOUDFLARE_ACCOUNT_ID — id tài khoản Cloudflare
+# wrangler.jsonc phải đã có database_id của D1 (tạo một lần bằng `npm run cf:setup` trên máy).
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+
+      - name: Migration D1 + build web + deploy Worker
+        run: npm run cf:deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
