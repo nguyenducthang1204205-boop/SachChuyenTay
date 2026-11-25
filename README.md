@@ -107,4 +107,3 @@ Mã giảm giá mẫu: `CHUYENTAY10` (10%), `DOCXANH` (15%).
 ## Thư mục `_legacy-static/`
 
 Bản web tĩnh cũ, giữ lại để đối chiếu. Đã bị `.gitignore`; xoá khi không cần nữa.
-# SachChuyenTay
